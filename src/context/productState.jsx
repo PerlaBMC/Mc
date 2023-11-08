@@ -259,12 +259,12 @@ const addProductClose = async (id) => {
                 type: "ELIMINAR_PRODUCTO",
                 payload: id,
               });
-              Swal.fire({
+             /* Swal.fire({
                 icon: "error",
                 title: "Producto eliminado",
                 showCancelButton: false,
                 timer: 1000
-              });
+              });*/
             } catch (error) {
                 Swal.fire({
                     icon: "error",

@@ -3,21 +3,22 @@ import ProductContext from "../context/productContext";
 import { NavLink, useParams } from "react-router-dom";
 import { Link } from "react-router-dom"
 
-const ProductPage = () => {
 
-const {getProduct, product, addProduct} = useContext(ProductContext);
+const CloseProductPage = () => {
+
+const {getProductClose, product, addProductClose} = useContext(ProductContext);
 const {id} = useParams();
 //console.log (id)
 
 const handleAddProduct = (id) => {
-  addProduct(id)
+  addProductClose(id)
 }
 
 
 useEffect(() => {
-getProduct(id)
-console.log(getProduct)
-}, [getProduct, id])
+getProductClose(id)
+console.log(getProductClose)
+}, [getProductClose, id])
 
 
   return (
@@ -32,13 +33,52 @@ console.log(getProduct)
 							<div className="card mb-3" style={{ maxWidth: "100%" }}>
 								<div className="row g-0">
 									<div className="col-md-4">
-										<img
-											src={product.image}
-											className="img-fluid rounded-start"
-											alt={product.productName}
-											style={{ height: "100%" }}
-										/>
+										<div id="carouselExample" className="carousel slide ">
+											<div className="carousel-inner">
+												<div className="carousel-item active img1">
+													<img
+														src={product.image}
+														className="img-fluid rounded-start"
+														alt={product.productName}
+														style={{ height: "100%" }}
+													/>
+												</div>
+												<div className="carousel-item img2">
+													<img
+														src={product.image2}
+														className="img-fluid rounded-start"
+														alt={product.productName}
+														style={{ height: "100%" }}
+													/>
+												</div>
+											</div>
+											<button
+												className="carousel-control-prev"
+												type="button"
+												data-bs-target="#carouselExample"
+												data-bs-slide="prev"
+											>
+												<span
+													className="carousel-control-prev-icon"
+													aria-hidden="true"
+												/>
+												<span className="visually-hidden">Previous</span>
+											</button>
+											<button
+												className="carousel-control-next"
+												type="button"
+												data-bs-target="#carouselExample"
+												data-bs-slide="next"
+											>
+												<span
+													className="carousel-control-next-icon"
+													aria-hidden="true"
+												/>
+												<span className="visually-hidden">Next</span>
+											</button>
+										</div>
 									</div>
+
 									<div
 										className="col-md-8"
 										style={{
@@ -86,7 +126,7 @@ console.log(getProduct)
 													</Link>
 												</div>
 												<div class="col">
-													<NavLink to="/products">
+													<NavLink to="/CloseColection">
 														{" "}
 														<button className="btnProduct">
 															<span className="btnProduct-content">Back</span>
@@ -106,4 +146,4 @@ console.log(getProduct)
 	);
 }
 
-export default ProductPage
+export default CloseProductPage

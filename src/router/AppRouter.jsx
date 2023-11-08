@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import PublicNavbar from "../components/navBar";
-import HomePage from "../pages/homePage";
-import AboutPage from "../pages/aboutPage";
+import HomePage from "../pages/HomePage";
+import AboutPage from "../pages/AboutPage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import ProductsPage from "../pages/ProductsPage";
@@ -11,9 +11,12 @@ import PerfilPage from "../pages/PerfilPage";
 import ColeccionesPage from "../pages/ColeccionesPage";
 import ShoesPage from "../pages/ShoesPage";
 import ClosePage from "../pages/ClosePage";
+import Footer from "../components/Footer";
 
 import { useContext,useEffect} from "react";
 import AuthContext from "../context/authContext";
+import ShoesProductPage from "../pages/ShoesProductPage";
+import CloseProductPage from "../pages/CloseProductPage";
 
 
 
@@ -29,16 +32,18 @@ renewToken();
    <>
    <Router>
     <PublicNavbar/>
-    <div className="container pt-5">
+    <div>
     <Routes>
        <Route path="/" element = {<HomePage/>} />
        <Route path="/about" element = {<AboutPage/>} />
        <Route path="/products" element = {<ProductsPage/>}/>
        <Route path="/products/:id" element= {<ProductPage/>}/>
+       <Route path="/productShoes/:id" element= {<ShoesProductPage/>}/>
        <Route path="/cart" element= {<CartPage/>}/>
        <Route path="/colection" element={<ColeccionesPage/>}/>
        <Route path="/ShoesColection" element={<ShoesPage/>}/>
        <Route path="/CloseColection" element={<ClosePage/>}/>
+       <Route path="/productClose/:id" element= {<CloseProductPage/>}/>
       {user.name ? (
       <>
       <Route path="/perfil" element={<PerfilPage/>}/>
@@ -55,6 +60,7 @@ renewToken();
        <Route path="/*" element={<Navigate to="/" replace/>}/>
        </Routes>
     </div>
+    <Footer/>
    </Router>
    </>
   )

@@ -33,6 +33,7 @@ setForm (initForm)
 
   return (
   <>
+<div className='container loginPage'> 
 <main className='row'>
 <article className='col'>
 <form onSubmit={handleSubmit}>
@@ -61,6 +62,7 @@ setForm (initForm)
   {user?.name}
   </article>
 </section>
+</div>
   </>
   )
 }
