@@ -142,26 +142,26 @@ const HomePage = () => {
 						</div>
 
 						<div id="myDIVRopa">
-							<div class="item1">
+							<div className="item1">
 								<img
 									src="https://res.cloudinary.com/dujrua0vo/image/upload/v1699191728/WhatsApp_Image_2023-10-30_at_21.42.05_3_tfzfia.jpg"
 									alt="CollageRopa 1/6"
 								/>
 							</div>
-							<div class="item2">
+							<div className="item2">
 								<img
 									src="https://res.cloudinary.com/dujrua0vo/image/upload/v1697065777/6_pgndwh.png"
 									alt="CollageRopa 2/6"
 								/>
 							</div>
-							<div class="item3">
+							<div className="item3">
 								<img
 									src="https://res.cloudinary.com/dujrua0vo/image/upload/v1699191728/WhatsApp_Image_2023-10-30_at_21.42.20_1_mrnyco.jpg"
 									alt="CollageRopa 3/6"
 								/>
 							</div>
 
-							<div class="item4R">
+							<div className="item4R">
 								<div className="container1">
 									<img
 										src="https://res.cloudinary.com/dujrua0vo/image/upload/v1697053609/6_nch34q.png"
@@ -180,19 +180,19 @@ const HomePage = () => {
 									</div>
 								</div>
 							</div>
-							<div class="item5">
+							<div className="item5">
 								<img
 									src="https://res.cloudinary.com/dujrua0vo/image/upload/v1697065770/2_hqwqes.png"
 									alt="CollageRopa 4/6"
 								/>
 							</div>
-							<div class="item6">
+							<div className="item6">
 								<img
 									src="https://res.cloudinary.com/dujrua0vo/image/upload/v1699191725/WhatsApp_Image_2023-10-30_at_21.41.04_pqecwb.jpg"
 									alt="CollageRopa 5/6"
 								/>
 							</div>
-							<div class="item6">
+							<div className="item6">
 								<img
 									src="https://res.cloudinary.com/dujrua0vo/image/upload/v1697065772/3_kvyome.png"
 									alt="CollageRopa 6/6"

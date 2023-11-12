@@ -223,36 +223,6 @@ const addProductClose = async (id) => {
     }
   }
 
-
-
-/*const addProduct = async (id) => {
-    
-        const response = await getProductService(id)
-
-        //console.log (response.data.data)
-
-        if (response && response.data && response.data.data) {
-            dispatch({
-              type: "AGREGAR_PRODUCTO",
-              payload: response.data.data,
-            });
-        
-            Swal.fire({
-              icon: "success",
-              title: "Producto agregado al carrito",
-              showCancelButton: false,
-              timer: 1000
-            });
-          } else {
-            Swal.fire({
-              icon: "error",
-              title: "Error al agregar producto al carrito",
-              showCancelButton: false,
-              timer: 1000
-            });
-          }
-        };*/
-
         const deleteCartProduct = (id) => {
             try {
               dispatch({
@@ -275,24 +245,41 @@ const addProductClose = async (id) => {
             }
           };
 
+          const AddProdcut = (id) => {
+            dispatch({
+              type: "ENCONTRAR_PRODUCTO",
+              payload: id
+            })
+          }
+
           const registrarPedido = async (form) => {
             try {
-              const resp = await postPedido(form)
-            dispatch({
-                type: "AGRAGAR_PEDIDO",
+              const resp = await postPedido(form);
+        
+              dispatch({
+                type: "AGREGAR_PEDIDO",
                 payload: resp.data.data,
               });
+              Swal.fire({
+                icon: "success",
+                title: "Pedido registrado",
+                showConfirmButton: false,
+                timer: 2000,
+              });  
         
+              console.log(resp.data.data)
+
             } catch (error) {
-              console.log(error)
+              console.log(error.response.data);
               Swal.fire({
                 icon: "error",
-                title: "error en pedido",
+                title: "Email registrado",
                 showConfirmButton: false,
                 timer: 2000,
               });  
             }
           };
+          
 
     return (
     <ProductContext.Provider value={{
@@ -303,6 +290,7 @@ const addProductClose = async (id) => {
     getProducts,
     getProduct,
     addProduct,
+    AddProdcut,
     deleteCartProduct,
     registrarPedido,
     getProductsShoes,

@@ -97,12 +97,12 @@ console.log(getProductClose)
 										</h6>{" "}
 										<br />
 										<br />
-										<div class="container text-center">
-											<div class="row">
-												<div class="col">
+										<div className="container text-center">
+											<div className="row">
+												<div className="col">
 													<Link onClick={() => handleAddProduct(product.id)}>
 														<button
-															class="btnHeard"
+															className="btnHeard"
 															style={{
 																display: "block",
 																marginLeft: "auto",
@@ -114,7 +114,7 @@ console.log(getProductClose)
 																height="20.625"
 																width="20.503"
 																xmlns="http://www.w3.org/2000/svg"
-																class="icon"
+																className="icon"
 															>
 																<path
 																	transform="translate(0 0)"
@@ -125,7 +125,7 @@ console.log(getProductClose)
 														</button>
 													</Link>
 												</div>
-												<div class="col">
+												<div className="col">
 													<NavLink to="/CloseColection">
 														{" "}
 														<button className="btnProduct">

@@ -1,10 +1,9 @@
 import { useContext, useState, useEffect } from "react";
-import axios from "axios";
 import ProductContext from "../context/productContext";
 import AuthContext from "../context/authContext";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
-const initForm = {
+{/*const initForm = {
   user_name: "",
   productName:"",
   productID: "",
@@ -12,46 +11,41 @@ const initForm = {
   precio: "",
   cantidad: "", 
   proveedor: ""
-};
+};*/}
 
-/*const inputProductName = document.getElementById("nombreProducto");
-const inputProductID= document.getElementById("inputProductID");
-const inputProductPrice= document.getElementById("inputProductPrice");
-const inputProductEspecificaciones= document.getElementById("inputProductEspecificaciones");
-const inputProductCantidad= document.getElementById("inputProductCantidad");
-const inputProveedorName=document.getElementById("inputProveedorName")
-const inputUserName= document.getElementById("inputUserName")*/
+
 
 const CartPage = () => {
-	const { cart, deleteCartProduct, registrarPedido } =
-  useContext(ProductContext);
+	const { cart, deleteCartProduct, registrarPedido  } = useContext(ProductContext);
 	const { user } = useContext(AuthContext);
 	const [ammount, setAmmount] = useState(0);
 	const handleDeleteProduct = (id) => {
 		deleteCartProduct(id);
 	};
 
+
+
+
+
+
+	const initForm = {
+		user_name: user.name,
+		productName: "",
+		productID: "",
+		especificaciones: "",
+		precio: "",
+		cantidad: "", 
+		proveedor: ""
+	  };
+console.log(initForm.productName)
+
 	useEffect(() => {
 		setAmmount(cart.reduce((acc, item) => acc + item.productPrice, 0));
 	}, [cart]);
 
-	{/*const postPedido = async () => {
-		const resp = await axios.post("http://localhost:4001/api/pedido");
-		body: JSON.stringify({
-      user_name: inputUserName.value,
-      productName: inputProductName,
-      productID: inputProductID.value,
-      especificaciones: inputProductEspecificaciones.value,
-      precio: inputProductPrice.value,
-      cantidad: inputProductCantidad.value, 
-      proveedor: inputProveedorName.value,
-		});
-
-		const datos = await resp.json();
-		console.log(datos);
-	};*/}
 
 	const [form, setForm] = useState(initForm)
+
   
     const handleChange = (e) => {
       setForm({
@@ -60,43 +54,38 @@ const CartPage = () => {
       });
     };
   
-    const handleSubmit = async (e) => {
+   const handleSubmit = async (e) => {
     e.preventDefault();
-    await registrarPedido(form)
-
-  
+ await registrarPedido(form)
   setForm (initForm)
   }
 
 	return (
 		<>
-			<main className="row" onSubmit={handleSubmit}>
+			<main className="row">
 				<article className="col">
-					<div class="container">
-						<div class="content">
-							<div class="content__container">
-								<p class="content__container__text">{user?.name}</p>
-								<ul class="content__container__list">
-									<li class="content__container__list__item">
+					<div className="container">
+						<div className="content">
+							<div className="content__container">
+								<p className="content__container__text">{user?.name}</p>
+								<ul className="content__container__list">
+									<li className="content__container__list__item">
 										bienvenida a Mc!
 									</li>
-									<li class="content__container__list__item">welcome to Mc!</li>
-									<li class="content__container__list__item">
+									<li className="content__container__list__item">welcome to Mc!</li>
+									<li className="content__container__list__item">
 										bienvenue dans Mc !
 									</li>
-									<li class="content__container__list__item">
+									<li className="content__container__list__item">
 										benvenuto nel Mc!
 									</li>
 								</ul>
 							</div>
 						</div>
 					</div>
-
+					<form onSubmit={handleSubmit}>
 					{cart.map((product) => (
-						<div
-							key={product.id}
-							className="card mb-3 cardCart"
-						>
+						<div key={product.id} className="card mb-3 cardCart">
 							<div className="row g-0">
 								<div className="col-md-4">
 									<img
@@ -108,59 +97,117 @@ const CartPage = () => {
 								</div>
 								<div className="col-md-8">
 									<div className="card-body">
+
 										<h3 className="card-title" id="inputProductName">
 											{product.productName}
 										</h3>
 										<h5 className="card-text" id="inputProductPrice">
 											$ {product.productPrice} MXN
 										</h5>
-										
-										<p className="card-text" id="inputProductID" style={{color:"white"}}>
-												{product.productID}
-										</p>
-										<div>
-											<div>
-											<label htmlFor="inputProductCantidad">Modelo</label>
-											<select
-												className="form-select"
-											>
-												<option value="1">{product.productSize.type1}</option>
-												<option value="2">{product.productSize.type2}</option>
-												<option value="3">{product.productSize.type3}</option>
-											</select>
-										</div>{" "}
-										<br />
-										<div>
-											<label htmlFor="inputProductCantidad">Cantidad</label>
-											<select className="form-select" id="inputProductCantidad">
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-											</select>
-										</div>{" "}
-										</div>
-										<br />
-										<button
-											type="button"
-											className="btn btn-danger"
-											onClick={() => handleDeleteProduct(product.id)}
+
+										<p
+											className="card-text"
+											id="inputProductID"
+											style={{ color: "white" }}
 										>
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												width="16"
-												height="16"
-												fill="currentColor"
-												class="bi bi-trash3-fill"
-												viewBox="0 0 16 16"
-											>
-												<path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-											</svg>
-										</button>
+											{product.productID}
+										</p>
+									
+
+{/*Requisito formulario nombre de usuario*/}
+<input className="form-control" 
+type="hidden" 
+value={form.user_name}
+ readonly></input>
+
+
+{/*Requisito formulario nombre de producto*/}
+<input 
+ className="form-control" 
+type="text" 
+id="nombreProducto"
+name="inputProductName"
+value={form.productName = product.productName}
+ readonly></input>
+
+
+{/*Requisito formulario id de producto*/}
+  <input
+    type="text"
+    id="inputProductID"
+    name="productID"
+    value={form.productID = product.productID}
+    onChange={handleChange}
+  />
+
+
+<select className="form-select" id="inputEspecificaciones">
+    <option selected>Selecciona tu mejor opción</option>
+    <option value={form.especificaciones=product.productSize.type1}>{product.productSize.type1}</option>
+    <option value={form.especificaciones=product.productSize.type2}>{product.productSize.type2}</option>
+	<option value={form.especificaciones=product.productSize.type3}> {product.productSize.type3}</option>
+	<option value={form.especificaciones=product.productSize.type4}>{product.productSize.type4}</option>
+	<option value={form.especificaciones=product.productSize.type5}>{product.productSize.type5}</option>
+	<option value={form.especificaciones=product.productSize.type6}>{product.productSize.type6}</option>
+</select>
+
+{/*Requisito formulario precio*/}
+  <input
+    type="text"
+    id="inputPrecio"
+    name="precio"
+    value={form.precio=product.productPrice}
+    onChange={handleChange}
+  /> 
+<br />
+
+
+<label htmlFor="inputProveedor">Proveedor</label>
+<select className="form-select" id="inputProveedorName" onChange={handleChange}>
+    <option selected>Choose...</option>
+	<option  value={form.proveedor="ana"}>Ana</option>
+	<option  value={form.proveedor}>Gaby</option>
+	<option >Cristina Chavarria</option>
+					</select>
+
+{/*<input type="text" name="proveedor" id="proveedor"  value={form.proveedor =  prov1} onChange={handleChange}/>*/}
+
+<br />
+
+<label htmlFor="inputCantidad">Cantidad</label>
+  <input
+    type="text"
+    id="inputCantidad"
+    name="cantidad"
+    value={form.cantidad}
+    onChange={handleChange}
+					/>
+
+
+
+
+<br /> <br />
+<div style={{display: "flex", justifyContent: "space-between"}}>
+<button type="submit" className="btn btn-success"><i class="bi bi-box2-heart-fill"> </i> Confirmar</button>
+	
+	<button
+											  type="button"
+											  className="btn btn-danger"
+											  onClick={() => handleDeleteProduct(product.id)}
+										  >
+										  <i class="bi bi-trash-fill"></i> Eliminar
+										  </button>
+</div>
+
+				
 									</div>
 								</div>
 							</div>
 						</div>
 					))}
+
+					</form>
+
 				</article>
 			</main>
 			<section className="row">
@@ -170,32 +217,127 @@ const CartPage = () => {
 							{user.name ? (
 								<>
 									<div className="container spaceAmount">
-									<p className="fs-1">Total</p>
-									<p className="fs-2" id="compraTotal">
-										{" "}
-										$ {ammount} MXN{" "}
-									</p>
-									<label htmlFor="inputProveedorName">Selecciona a tu proveedor</label><br /> <br />
-									<div className="InputContainer">
-										<select className="form-select inputProov" id="inputProveedorName">
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select>
+
+										<p className="fs-1">Total</p>
+										<p className="fs-2" id="compraTotal">
+											{" "}
+											$ {ammount} MXN{" "}
+										</p>
+
+
+<form onSubmit={handleSubmit}>	
+<table className="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre de producto</th>
+      <th scope="col">Precio</th>
+	  <th scope="col">Id</th>
+      <th scope="col">Talla</th>
+      <th scope="col">Cantidad</th>
+	  <th scope="col">Proveedor</th>
+    </tr>
+  </thead>
+  {cart.map((product) => (
+  <tbody>
+    <tr>
+      <th scope="row" id="inputProductName">
+		<input type="text" value={form.productName} />
+		</th>
+      <td><input type="text" value={form.precio} /></td>
+	  <td><input type="text" value={form.productID} /></td>
+	  <td><input type="text" value={form.especificaciones}/></td>
+
+      <td>
+   <select className="form-select" id="inputEspecificaciones">
+    <option >{product.productSize.type1}</option>
+    <option >{product.productSize.type2}</option>
+	<option> {product.productSize.type3}</option>
+	<option >{product.productSize.type4}</option>
+	<option >{product.productSize.type5}</option>
+	<option >{product.productSize.type6}</option>
+</select>
+	  </td>
+	  <td>
+	  <select className="form-select" id="inputEspecificaciones">
+    <option >1</option>
+    <option >2</option>
+	<option> 3</option>
+	<option >4</option>
+	<option >5</option>
+
+</select>
+	  </td>
+
+	  <td>
+	  <select className="form-select" id="inputEspecificaciones">
+    <option >Ana</option>
+    <option >Gaby</option>
+	<option> Camila</option>
+	<option >Miriam</option>
+	<option >Melisa</option>
+
+</select>
+	  </td>
+    </tr>
+  </tbody>
+ ))}		
+
+
+<div style={{display: "flex", justifyContent: "space-between"}}>
+<button type="submit" className="btn btn-success"><i class="bi bi-box2-heart-fill"> </i> Confirmar</button>
+	
+	<button
+											  type="button"
+											  className="btn btn-danger"
+											  onClick={() => handleDeleteProduct(product.id)}
+										  >
+										  <i class="bi bi-trash-fill"></i> Eliminar
+										  </button>
+</div>
+
+</table>
+</form>
+			
+
+
+
+
+
+
+
+
+										{/*<label htmlFor="inputProveedorName">
+											Selecciona a tu proveedor
+										</label>
+										<br /> <br />
+										<div className="InputContainer">
+											<select
+												className="form-select inputProov"
+												id="inputProveedorName"
+											>
+												<option value="1">Ana Cornejo</option>
+												<option value="2">Cristina Chavarria</option>
+												<option value="3">Dariana Chavarria</option>
+												<option value="4">Erika Maca</option>
+												<option value="5">Melissa Segovia</option>
+												<option value="6">Vania Chavarria</option>
+											</select>
+										</div>
+										<br /> <br />
+										<main className="row">
+											<article className="col">
+												<button className="cta"  type="submit">
+													<span>Confirmar compra</span>
+													<svg viewBox="0 0 13 10" height="10px" width="15px">
+														<path d="M1,5 L11,5"></path>
+														<polyline points="8 1 12 5 8 9"></polyline>
+													</svg>
+							</button>
+											</article>
+							</main> */}
 									</div>{" "}
+									
 									<br />
-									<main className="row">
-										<article className="col">
-										<button class="cta">
-  <span>Confirmar compra</span>
-  <svg viewBox="0 0 13 10" height="10px" width="15px">
-    <path d="M1,5 L11,5"></path>
-    <polyline points="8 1 12 5 8 9"></polyline>
-  </svg>
-</button>
-										</article>
-									</main>
-									</div> <br />
 								</>
 							) : (
 								<>

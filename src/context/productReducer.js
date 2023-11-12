@@ -26,10 +26,19 @@ switch (action.type){
             ),
         };
 
-    case "AGRAGAR_PEDIDO":
+    case "AGREGAR_PEDIDO":
         return {
             ...globalState,
             pedido: action.payload
+        }
+
+    case "ENCONTRAR_PRODUCTO":
+        return{
+            ...globalState,
+            cart: globalState.cart.filter(
+                (product) => product.id === action.payload
+            )
+
         }
 
     default:

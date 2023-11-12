@@ -14,6 +14,7 @@ const getProductService= async (id) => {
 
 const postPedido = async (form) => {
     const response = await axios.post (`${URL_ROOT}/pedido`, form)
+    return response
 }
 
 const getProductShoesService = async () => {
