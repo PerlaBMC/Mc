@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
 import ProductContext from "../context/productContext";
 import { NavLink, useParams } from "react-router-dom";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const ShoesProductPage = () => {
 
@@ -28,7 +29,7 @@ console.log(getProductShoes)
 			>
 				<section className="row">
 					<article className="col">
-						{product && (
+						{product.id && (
 							<div className="card mb-3" style={{ maxWidth: "100%" }}>
 								<div className="row g-0">
 									<div className="col-md-4">
@@ -94,6 +95,84 @@ console.log(getProductShoes)
 												{product.description}
 											</small>
 										</h6>{" "}
+
+										<div className="dropdown">
+											<button
+												className="btn SizeDropdown dropdown-toggle"
+												type="button"
+												data-bs-toggle="dropdown"
+												aria-expanded="false"
+											>
+												Elige tu talla
+											</button>
+											<ul className="dropdown-menu">
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type1}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													 {product.productSize.type2}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type3}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type4}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type5}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type6}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type7}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type8}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type9}
+													</a>
+												</li>
+											</ul>
+										</div>
+										<br />
+										<br />
+										{/*<Dropdown>
+											<Dropdown.Toggle className="SizeDropdown" id="dropdown-basic">
+												Tallas
+											</Dropdown.Toggle>
+
+											<Dropdown.Menu>
+												<Dropdown.Item href="#/action-1">{product.productSize.type1}</Dropdown.Item>
+												<Dropdown.Item href="#/action-2">{product.productSize.type2}</Dropdown.Item>
+												<Dropdown.Item href="#/action-3">{product.productSize.type3}</Dropdown.Item>
+												<Dropdown.Item href="#/action-4">{product.productSize.type4}</Dropdown.Item>
+												<Dropdown.Item href="#/action-5">{product.productSize.type5}</Dropdown.Item>
+												<Dropdown.Item href="#/action-6">{product.productSize.type6}</Dropdown.Item>
+												<Dropdown.Item href="#/action-7">{product.productSize.type7}</Dropdown.Item>
+												<Dropdown.Item href="#/action-8">{product.productSize.type8}</Dropdown.Item>
+												<Dropdown.Item href="#/action-9">{product.productSize.type9}</Dropdown.Item>
+												<Dropdown.Item href="#/action-10">{product.productSize.type10}</Dropdown.Item>
+											</Dropdown.Menu>
+									</Dropdown>*/}
 										<br />
 										<br />
 										<div className="container text-center">

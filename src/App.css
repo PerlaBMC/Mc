@@ -470,3 +470,9 @@ display: inline;
   padding-top: 35px;
   padding-bottom: 35px;
  }
+
+ .SizeDropdown {
+  background: linear-gradient(to bottom,rgb(227, 213, 255),rgb(255, 231, 231));
+  border: none;
+color: #3d3a4e;
+ }
