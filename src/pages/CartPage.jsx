@@ -98,7 +98,7 @@ console.log(initForm.productName)
 										/>
 									</div>
 									<div className="col-md-8">
-										<div className="card-body">
+										<div className="card-body" >
 											<h3 className="card-title" id="inputProductName">
 												{product.productName}
 											</h3>
@@ -193,8 +193,9 @@ console.log(initForm.productName)
 												value={(form.precio = product.productPrice)}
 												onChange={handleChange}
 											/>
-											<br />
-											<label htmlFor="inputProveedor">Proveedor</label>
+											
+											
+											{/*<label htmlFor="inputProveedor">Proveedor</label>
 											<select
 												className="form-select"
 												id="inputProveedorName"
@@ -207,31 +208,31 @@ console.log(initForm.productName)
 											</select>
 											{/*<input type="text" name="proveedor" id="proveedor"  value={form.proveedor =  prov1} onChange={handleChange}/>*/}
 											<br />
-											<label htmlFor="inputCantidad">Cantidad</label>
+											{/*<label htmlFor="inputCantidad">Cantidad</label>
 											<input
 												type="number"
 												id="inputCantidad"
 												name="cantidad"
 												value={form.cantidad}
 												onChange={handleChange}
-											/>
-											<br /> <br />
+												/>*/}
+											
 											<div
 												style={{
 													display: "flex",
 													justifyContent: "space-between",
 												}}
 											>
-												<button type="submit" className="btn btn-success">
-													<i class="bi bi-box2-heart-fill"> </i> Confirmar
-												</button>
+												{/*<button type="submit" className="btn btn-success">
+													<i className="bi bi-box2-heart-fill"> </i> Confirmar
+											</button>*/}
 
 												<button
 													type="button"
 													className="btn btn-danger"
 													onClick={() => handleDeleteProduct(product.id)}
 												>
-													<i class="bi bi-trash-fill"></i> Eliminar
+													<i className="bi bi-trash-fill"></i> Eliminar
 												</button>
 											</div>
 										</div>
@@ -254,6 +255,8 @@ console.log(initForm.productName)
 											{" "}
 											$ {ammount} MXN{" "}
 										</p>
+
+									
 
 										{/*<form onSubmit={handleSubmit}>	
 <table className="table">
@@ -314,14 +317,14 @@ console.log(initForm.productName)
 
 
 <div style={{display: "flex", justifyContent: "space-between"}}>
-<button type="submit" className="btn btn-success"><i class="bi bi-box2-heart-fill"> </i> Confirmar</button>
+<button type="submit" className="btn btn-success"><i className="bi bi-box2-heart-fill"> </i> Confirmar</button>
 	
 	<button
 											  type="button"
 											  className="btn btn-danger"
 											  onClick={() => handleDeleteProduct(product.id)}
 										  >
-										  <i class="bi bi-trash-fill"></i> Eliminar
+										  <i className="bi bi-trash-fill"></i> Eliminar
 										  </button>
 </div>
 
@@ -365,15 +368,20 @@ console.log(initForm.productName)
 							</button>
 											</article>
 							</main> */}
+								<div className="infoCart container">
+<img src="https://res.cloudinary.com/dujrua0vo/image/upload/v1700451473/4_gvwink.png" alt="" />
+
+</div>
 									</div>{" "}
 									<br />
 								</>
 							) : (
 								<>
-									<Link to="/login" className="btn btn-success">
+									<Link to="/login" className="btn SizeDropdown" style={{margin: "40px"}}>
 										{" "}
 										Iniciar Sesión{" "}
 									</Link>
+									<br /> <br />
 								</>
 							)}
 						</>

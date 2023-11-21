@@ -29,7 +29,7 @@ console.log(getProductClose)
 			>
 				<section className="row">
 					<article className="col">
-						{product && (
+						{product.id && (
 							<div className="card mb-3" style={{ maxWidth: "100%" }}>
 								<div className="row g-0">
 									<div className="col-md-4">
@@ -95,6 +95,38 @@ console.log(getProductClose)
 												{product.description}
 											</small>
 										</h6>{" "}
+										<div className="dropdown">
+											<button
+												className="btn SizeDropdown dropdown-toggle"
+												type="button"
+												data-bs-toggle="dropdown"
+												aria-expanded="false"
+											>
+												Elige tu talla
+											</button>
+											<ul className="dropdown-menu">
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type1}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													 {product.productSize.type2}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type3}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type4}
+													</a>
+												</li>
+											</ul>
+										</div>
 										<br />
 										<br />
 										<div className="container text-center">

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const URL_ROOT = "http://localhost:4001/api"
-//const URL_ROOT = "https://mc-full-backend.onrender.com/api"
+//const URL_ROOT = "http://localhost:4001/api"
+const URL_ROOT = "https://mc-full-backend.onrender.com/api"
 
 const getProdusctsService = async () => {
     const response = await axios.get (`${URL_ROOT}/jeweler`);

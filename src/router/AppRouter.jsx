@@ -17,6 +17,8 @@ import { useContext,useEffect} from "react";
 import AuthContext from "../context/authContext";
 import ShoesProductPage from "../pages/ShoesProductPage";
 import CloseProductPage from "../pages/CloseProductPage";
+import WhatsAppButton from '../components/whatsUp';
+import ScrollToTopButton from '../components/up';
 
 
 
@@ -60,6 +62,8 @@ renewToken();
        <Route path="/*" element={<Navigate to="/" replace/>}/>
        </Routes>
     </div>
+    <ScrollToTopButton />
+    <WhatsAppButton  message="¡Hola! Estoy interesado en los productos de Mc." />
     <Footer/>
    </Router>
    </>

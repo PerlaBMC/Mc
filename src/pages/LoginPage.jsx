@@ -33,10 +33,30 @@ setForm (initForm)
 
   return (
   <>
+<div className='loginForm'>
 <div className='container loginPage'> 
 <main className='row'>
 <article className='col'>
-<form onSubmit={handleSubmit}>
+<div className="container">
+  <form className="form" onSubmit={handleSubmit}>
+    <p className="title">Ingresa tu usuario</p>
+    <input placeholder="Nombre de usuario"  type="text" className="username input" id="inputName"  name='name' value={form.name} onChange={handleChange} />
+    <input placeholder="Password" className="password input" type="password" id="inputPassword" name='password' value={form.password} onChange={handleChange}/>
+    <input placeholder="email" className="password input" type="text" id="inputEmail" name='email' value={form.email} onChange={handleChange}  />
+    <button className="btnForm" type="submit">Iniciar sesión</button>
+  </form>
+</div>
+</article>
+</main>
+<section className='row'>
+  <article className='col'>
+  {user?.name}
+  </article>
+</section>
+</div>
+</div>
+
+{/*<form onSubmit={handleSubmit}>
   <div className="mb-3">
     <label htmlFor="inputName" className="form-label">Nombre de usuario</label>
     <input type="text" className="form-control" id="inputName" aria-describedby="emailHelp" name='name' value={form.name} onChange={handleChange}/>
@@ -54,15 +74,7 @@ setForm (initForm)
 
 
   <button type="submit" className="btn btn-primary">Iniciar sesión</button>
-</form>
-</article>
-</main>
-<section className='row'>
-  <article className='col'>
-  {user?.name}
-  </article>
-</section>
-</div>
+  </form>*/}
   </>
   )
 }

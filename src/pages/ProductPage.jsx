@@ -16,7 +16,7 @@ const handleAddProduct = (id) => {
 
 useEffect(() => {
 getProduct(id)
-console.log(getProduct)
+//console.log(getProduct)
 }, [getProduct, id])
 
 
@@ -28,7 +28,7 @@ console.log(getProduct)
 			>
 				<section className="row">
 					<article className="col">
-						{product && (
+						{product.id && (
 							<div className="card mb-3" style={{ maxWidth: "100%" }}>
 								<div className="row g-0">
 									<div className="col-md-4">
@@ -50,11 +50,45 @@ console.log(getProduct)
 										<h1 className="card-title">{product.productName}</h1>
 										<br />
 										<h3 className="card-text">${product.productPrice} MXN</h3>
+										
 										<h6 className="card-text">
 											<small className="text-body-secondary">
 												{product.description}
 											</small>
 										</h6>{" "}
+										<p>{product.productID}</p>
+										<div className="dropdown">
+											<button
+												className="btn SizeDropdown dropdown-toggle"
+												type="button"
+												data-bs-toggle="dropdown"
+												aria-expanded="false"
+											>
+												Elige tu modelo favorito
+											</button>
+											<ul className="dropdown-menu">
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type1}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													 {product.productSize.type2}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type3}
+													</a>
+												</li>
+												<li>
+													<a className="dropdown-item" href="#">
+													{product.productSize.type4}
+													</a>
+												</li>
+											</ul>
+										</div>
 										<br />
 										<br />
 										<div className="container text-center">

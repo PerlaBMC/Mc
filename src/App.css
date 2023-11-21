@@ -476,3 +476,203 @@ display: inline;
   border: none;
 color: #3d3a4e;
  }
+
+ .infoCart {
+  height: 100%;
+  background-image: url("https://res.cloudinary.com/dujrua0vo/image/upload/v1700450312/Favor_de_confirmar_el_pedido_con_su_proveedor_tw8hkt.png") ;
+  margin-left: 30px;
+ }
+
+ .infoCart img {
+  width: 100%;
+
+ }
+
+
+ @media screen and (max-width:950px) {
+  .infoCart {
+    margin-left: 0px;
+  }
+}
+
+.navBar {
+  overflow: hidden;
+}
+
+.btnWhatsUp {
+  background-color: #25d366; /* Color verde de WhatsApp */
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 10px;
+  position: fixed;
+	bottom: 40px;
+	right: 40px;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 99;
+}
+
+.btnWhatsUp:hover {
+  background-color: #128c7e; /* Cambiar color al pasar el ratón sobre el botón */
+}
+
+.UP {
+    position: fixed;
+    bottom: 110px;
+    right: 50px;
+    background: linear-gradient(to bottom,rgb(227, 213, 255),rgb(255, 231, 231));
+    color: purple;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 99;
+  }
+  
+.registerPage{
+  background-image: url("https://res.cloudinary.com/dujrua0vo/image/upload/v1700523060/cono%CC%81cenos_4_uqwpgd.png");
+}
+
+.loginForm {
+  background-image: url("https://res.cloudinary.com/dujrua0vo/image/upload/v1700523534/cono%CC%81cenos_5_xh4rua.png");
+}
+
+
+
+  ::selection {
+    background-color: gray;
+  }
+  
+  .form {
+    margin-top: 150px;
+    width: 400px;
+    height: 500px;
+    background-image: linear-gradient(to bottom, #424242,#212121);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.5rem;
+  }
+  
+  .title {
+    color: pink;
+    margin: 3rem 0;
+    font-size: 2rem;
+  }
+  
+  .input {
+    margin: 0.5rem 0;
+    padding: 1rem 0.5rem;
+    width: 20rem;
+    background-color: inherit;
+    color: pink;
+    border: none;
+    outline: none;
+  }
+  
+  .username {
+    border-bottom: 1px solid pink;
+    transition: all 400ms;
+  }
+  
+  .username:hover {
+    background-color: #424242;
+    border: none;
+    border-radius: 0.5rem;
+  }
+  
+  .password {
+    border-bottom: 1px solid pink;
+    transition: all 400ms;
+  }
+  
+  .password:hover {
+    background-color: #424242;
+    border: none;
+    border-radius: 0.5rem;
+  }
+  
+  .btnForm {
+    height: 3rem;
+    width: 20rem;
+    margin-top: 3rem;
+    background-color: #5B4749;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1.2rem;
+    transition: all 400ms;
+    box-shadow: 0 0 10px  pink, 0 0 10px pink;
+    color: white
+  }
+  
+  .btnForm:hover {
+    background-color: MistyRose;
+    box-shadow: none;
+    color: black
+  }
+  
+.profile {
+  background-image: url("https://res.cloudinary.com/dujrua0vo/image/upload/v1700519721/cono%CC%81cenos_3_kkkjii.png");
+  height: 800px;
+}
+
+.textContainer{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-left: 350px;
+  text-align: center;
+}
+
+.textContainer h2{
+  margin-top: 250px;
+  color: snow;
+  font-size: 50px;
+}
+
+.textContainer h1{
+  color: pink;
+  font-size: 80px;
+}
+
+.textContainer h3 {
+  margin-top: 140px;
+}
+
+@media screen and (max-width:950px) {
+  .textContainer {
+    width: 100%;
+    margin-left: 0%;
+  }
+}
+
+
+@media screen and (max-width:950px) {
+  .textContainer h2 {
+  margin-top: 352px;
+  color: black;
+  }
+}
+
+@media screen and (max-width:950px) {
+  .textContainer h1 {
+ color: #128c7e;
+ background-color: rgba(255, 250, 250, 0.577);
+ border-radius: 10px;
+  }
+}
+
+@media screen and (max-width:950px) {
+  .textContainer h3 {
+background-color: #128c7eb7;
+margin-top: 30px;
+border-radius: 10px;
+color: snow;
+  }
+}
+

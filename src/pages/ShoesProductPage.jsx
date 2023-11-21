@@ -14,7 +14,6 @@ const handleAddProduct = (id) => {
   addProductShoes(id)
 }
 
-
 useEffect(() => {
 getProductShoes(id)
 console.log(getProductShoes)
@@ -96,7 +95,7 @@ console.log(getProductShoes)
 											</small>
 										</h6>{" "}
 
-										<div className="dropdown">
+										{/*<div className="dropdown">
 											<button
 												className="btn SizeDropdown dropdown-toggle"
 												type="button"
@@ -152,12 +151,11 @@ console.log(getProductShoes)
 													</a>
 												</li>
 											</ul>
-										</div>
-										<br />
-										<br />
-										{/*<Dropdown>
+									</div>*/}
+										
+										<Dropdown>
 											<Dropdown.Toggle className="SizeDropdown" id="dropdown-basic">
-												Tallas
+												Elige tu talla
 											</Dropdown.Toggle>
 
 											<Dropdown.Menu>
@@ -172,7 +170,7 @@ console.log(getProductShoes)
 												<Dropdown.Item href="#/action-9">{product.productSize.type9}</Dropdown.Item>
 												<Dropdown.Item href="#/action-10">{product.productSize.type10}</Dropdown.Item>
 											</Dropdown.Menu>
-									</Dropdown>*/}
+									</Dropdown>
 										<br />
 										<br />
 										<div className="container text-center">
@@ -204,7 +202,7 @@ console.log(getProductShoes)
 													</Link>
 												</div>
 												<div className="col">
-													<NavLink to="/ShoesColection">
+													<NavLink  to="/ShoesColection" >
 														{" "}
 														<button className="btnProduct">
 															<span className="btnProduct-content">Back</span>

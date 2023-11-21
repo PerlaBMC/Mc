@@ -31,7 +31,31 @@ const RegisterPage = () => {
 
   return (
     <>
-    <main className='row'>
+ <div className='registerPage'> 
+ <div className='container loginPage'> 
+<main className='row'>
+<article className='col'>
+<div className="container" style={{display:"flex", justifyContent:"end"}}>
+  <form className="form" onSubmit={handleSubmit}>
+    <p className="title">Registra tu cuenta</p>
+    <input placeholder="Nombre de usuario"  type="text" className="username input" id="inputName"  name='name' value={form.name} onChange={handleChange} />
+    <input placeholder="Password" className="password input" type="password" id="inputPassword" name='password' value={form.password} onChange={handleChange}/>
+    <input placeholder="email" className="password input" type="text" id="inputEmail" name='email' value={form.email} onChange={handleChange}  />
+    <button className="btnForm" type="submit">Iniciar sesión</button>
+  </form>
+</div>
+</article>
+</main>
+<section className='row'>
+  <article className='col'>
+  {user?.name}
+  </article>
+</section>
+</div>
+ </div>
+
+
+  {/*  <main className='row'>
 <article className='col'>
 <form onSubmit={handleSubmit}>
   <div className="mb-3">
@@ -58,7 +82,7 @@ const RegisterPage = () => {
   <article className='col'>
 {user?.name}
   </article>
-</section>
+</section>*/}
     </>
   )
 }
