@@ -12,7 +12,7 @@ const HomePage = () => {
 						<div className="row row-cols-2 row-cols-sm-2">
 							<div className="col" id="divHome1">
 								<img
-									src="https://res.cloudinary.com/dujrua0vo/image/upload/v1696201129/7_awiwq7.png"
+									src="https://res.cloudinary.com/dujrua0vo/image/upload/v1700708051/logo-MC-negro_JPG_uirtkr.jpg"
 									alt=""
 									className="animate__animated animate__fadeInUp"
 								/>
